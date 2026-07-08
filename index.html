@@ -374,22 +374,25 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- CARTÃO DE CONVITE (só aparece quando o link traz ?data= de uma troca) -->
+    <div class="container" id="inviteCard" style="display: none; margin: 30px auto;">
         <h2>🎬 Álbum Toy Story</h2>
         <p>Você recebeu um convite para cruzar listas de figurinhas!</p>
 
         <a id="btnOpen" class="btn" href="#">Abrir no Aplicativo</a>
         <div class="loading" id="statusText">Verificando aplicativo...</div>
-        <!-- OVERLAY DE CARREGAMENTO PARA DEEP LINK -->
-        <div id="redirect-overlay">
-            <div class="spinner"></div>
-            <h2 style="margin-bottom: 10px; font-weight: 800;">Álbum Toy Story</h2>
-            <p>Processando troca de figurinhas...</p>
-            <p style="font-size: 0.85rem; color: #aaa; margin-top: 10px;">Redirecionando para o aplicativo.</p>
-        </div>
+    </div>
 
-        <!-- HEADER / HERO -->
-        <header class="hero">
+    <!-- OVERLAY DE CARREGAMENTO PARA DEEP LINK -->
+    <div id="redirect-overlay">
+        <div class="spinner"></div>
+        <h2 style="margin-bottom: 10px; font-weight: 800;">Álbum Toy Story</h2>
+        <p>Processando troca de figurinhas...</p>
+        <p style="font-size: 0.85rem; color: #aaa; margin-top: 10px;">Redirecionando para o aplicativo.</p>
+    </div>
+
+    <!-- HEADER / HERO -->
+    <header class="hero">
             <h1>🎬 Álbum Toy Story</h1>
             <p>A ferramenta definitiva para organizar sua coleção, gerenciar repetidas e realizar trocas ao vivo com o
                 Radar P2P.</p>
@@ -551,6 +554,7 @@
             if (dataParam) {
                 // Cria um link mágico do Android que força a abertura do seu App
                 // Se o app não estiver instalado, a propriedade browser_fallback_url manda para a Play Store!
+                document.getElementById('inviteCard').style.display = 'block';
                 document.getElementById('redirect-overlay').style.display = 'flex';
                 document.body.style.overflow = 'hidden'; // Evita rolagem durante redirecionamento
 
@@ -564,12 +568,8 @@
                 // Dispara automaticamente assim que a pessoa entra na página
 
                 window.location.href = intentLink;
-            } else {
-                // Se abrir a página sem nenhum código de troca
-                document.getElementById('btnOpen').innerText = "Baixar o Aplicativo";
-                document.getElementById('btnOpen').href = playStoreUrl;
-                document.getElementById('statusText').innerText = "Organize suas figurinhas grátis!";
             }
+            // Sem código de troca: a página é exibida como site normal, em largura total.
         </script>
 </body>
 

@@ -11,11 +11,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
         :root {
-            --primary-color: #0d0e31;
-            --primary-light: #1a1c52;
-            --accent-color: #00c853;
-            --accent-hover: #00e676;
-            --bg-color: #f4f7f6;
+            /* Paleta Toy Story 5 (mesma do app) */
+            --primary-color: #0056b3;   /* Azul Royal - Buzz Lightyear */
+            --primary-light: #0076e0;   /* Azul claro do gradiente */
+            --accent-color: #ffcc00;    /* Amarelo Vibrante - Energia/Ação */
+            --accent-hover: #ffd633;
+            --cyan: #00f2ff;            /* Ciano Neon - Tech Trio */
+            --bg-color: #f8f9fa;        /* Off-White */
             --card-bg: #ffffff;
             --text-main: #333333;
             --text-muted: #666666;
@@ -77,7 +79,7 @@
         }
 
         .container h2 {
-            color: #0d0e31;
+            color: var(--primary-color);
             margin-bottom: 5px;
         }
 
@@ -126,13 +128,13 @@
             display: inline-block;
             padding: 16px 35px;
             background: var(--accent-color);
-            color: var(--white);
+            color: #0d2a4d;
             text-decoration: none;
             border-radius: 30px;
-            font-weight: 600;
+            font-weight: 800;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
             border: none;
             cursor: pointer;
         }
@@ -140,7 +142,7 @@
         .btn:hover {
             background: var(--accent-hover);
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 200, 83, 0.5);
+            box-shadow: 0 12px 25px rgba(255, 204, 0, 0.5);
         }
 
         /* --- SEÇÕES GERAIS --- */
@@ -340,8 +342,8 @@
 
         /* --- FOOTER --- */
         footer {
-            background-color: #080921;
-            color: #888;
+            background-color: #16213e; /* Azul escuro do modo noturno do app */
+            color: #9db6d8;
             text-align: center;
             padding: 40px 20px;
         }
@@ -351,13 +353,13 @@
         }
 
         footer a {
-            color: var(--accent-color);
+            color: var(--cyan);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         footer a:hover {
-            color: var(--accent-hover);
+            color: var(--white);
             text-decoration: underline;
         }
 
@@ -526,7 +528,7 @@
 
         <!-- FOOTER -->
         <footer>
-            <p>&copy; 2024 Álbum Toy Story. Desenvolvido por Higor Fernandes.</p>
+            <p>&copy; 2026 Álbum Toy Story. Desenvolvido por Higor Fernandes.</p>
             <p>
                 <a href="https://hofernandes.github.io/AlbumToyStore-web/politica-de-privacidade.html"
                     target="_blank">Política de Privacidade</a> &bull;
